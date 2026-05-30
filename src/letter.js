@@ -6,7 +6,7 @@ const LETTER_LINES = [
   "And that i want you to know that I am soo grateful that you adopeed me",
   "thank yewww for adopting me and being the amazing mumma you are",
   "Thank yew for being there fow mee",
-  "habe a very very great year ahead"
+  "habe a very very great year ahead",
   "lobe youiii
   "Your putra<3",
 ];

@@ -1,14 +1,11 @@
 const SECRET = "31-05-2008";
 const LETTER_LINES = [
   "My dearest mumma,",
-  "happiest biwrthday to you<3",
-  "You are the most beautiful chapter of my life.",
-  "And that i want you to know that I am soo grateful that you adopeed me",
-  "thank yewww for adopting me and being the amazing mumma you are",
-  "Thank yew for being there fow mee",
-  "habe a very very great year ahead",
-  "lobe youiii",
-  "Your putra<3",
+  "Happiest biwrthday to youiii.",
+  "You may not habe given birth to me but you gave nme smth even more special(the fact that you chose me as your son). thank yew for chosing me as your sone and being there for me. I'm soo grateful to habe you in my life and you will always be precious to me.",
+  "I hope your birthday ish illed with lots of love and happiness. Live long Mumma and always be the amazing cutie(Goddess) you are",
+  "lobe youi fowever",
+  "Happy biwrthday once again",
 ];
 
 const input      = document.getElementById("ll-input");

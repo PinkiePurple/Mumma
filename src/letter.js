@@ -2,8 +2,8 @@ const SECRET = "31-05-2008";
 const LETTER_LINES = [
   "My dearest mumma,",
   "Happiest biwrthday to youiii.",
-  "You may not habe given birth to me but you gave nme smth even more special(the fact that you chose me as your son). thank yew for chosing me as your sone and being there for me. I'm soo grateful to habe you in my life and you will always be precious to me.",
-  "I hope your birthday ish illed with lots of love and happiness. Live long Mumma and always be the amazing cutie(Goddess) you are",
+  "You may not habe given birth to me but you gave me smth even more special(the fact that you chose me as your son). thank yew for chosing me as your son and being there for me. I'm soo grateful to habe you in my life and you will always be precious to me.",
+  "I hope your birthday ish filled with lots of love and happiness. Live long Mumma and always be the amazing cutie(Goddess) you are",
   "lobe youi fowever",
   "Happy biwrthday once again",
 ];

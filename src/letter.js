@@ -1,9 +1,14 @@
 const SECRET = "31-05-2008";
 const LETTER_LINES = [
-  "My dearest love,",
-  "Every moment with you feels magical.",
+  "My dearest mumma,",
+  "happiest biwrthday to you<3",
   "You are the most beautiful chapter of my life.",
-  "Forever yours ❤️",
+  "And that i want you to know that I am soo grateful that you adopeed me",
+  "thank yewww for adopting me and being the amazing mumma you are",
+  "Thank yew for being there fow mee",
+  "habe a very very great year ahead"
+  "lobe youiii
+  "Your putra<3",
 ];
 
 const input      = document.getElementById("ll-input");

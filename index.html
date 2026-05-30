@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <title>meow</title>
+  <meta name="description" content="A love letter." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/love-letter.css" />
+</head>
+<body>
+
+<div class="ll-root">
+
+  <!-- Animated blobs -->
+  <div class="ll-blob ll-blob-1"></div>
+  <div class="ll-blob ll-blob-2"></div>
+  <div class="ll-blob ll-blob-3"></div>
+  <div class="ll-blob ll-blob-4"></div>
+  <div class="ll-noise"></div>
+
+  <div class="ll-scene">
+
+    <!-- ENVELOPE -->
+    <div id="ll-env-wrap" class="ll-env-wrap">
+      <div class="ll-perspective">
+        <div id="ll-envelope" class="ll-envelope">
+
+          <!-- White base -->
+          <div class="ll-glass-base"></div>
+
+          <!-- Crease lines + specular border -->
+          <svg class="ll-env-svg" viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <clipPath id="envClip"><rect width="500" height="340" rx="16"/></clipPath>
+              <linearGradient id="specBorder" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%"   stop-color="rgba(255,255,255,0.85)"/>
+                <stop offset="45%"  stop-color="rgba(255,255,255,0.3)"/>
+                <stop offset="100%" stop-color="rgba(255,255,255,0.06)"/>
+              </linearGradient>
+            </defs>
+            <g clip-path="url(#envClip)">
+              <polygon points="0,0 0,340 250,188"    fill="rgba(255,255,255,0.06)"/>
+              <polygon points="500,0 500,340 250,188" fill="rgba(255,255,255,0.03)"/>
+              <polygon points="0,340 500,340 250,188" fill="rgba(255,255,255,0.08)"/>
+              <line x1="0"   y1="0"   x2="250" y2="188" stroke="rgba(200,150,170,0.45)" stroke-width="1"/>
+              <line x1="500" y1="0"   x2="250" y2="188" stroke="rgba(200,150,170,0.45)" stroke-width="1"/>
+              <line x1="0"   y1="340" x2="250" y2="188" stroke="rgba(200,150,170,0.45)" stroke-width="1"/>
+              <line x1="500" y1="340" x2="250" y2="188" stroke="rgba(200,150,170,0.45)" stroke-width="1"/>
+            </g>
+            <rect x="0.5" y="0.5" width="499" height="339" rx="15.5" fill="none" stroke="url(#specBorder)" stroke-width="1.5"/>
+          </svg>
+
+          <!-- Flap -->
+          <div class="ll-flap-wrap">
+            <svg class="ll-flap-svg" viewBox="0 0 500 190" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="flapGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%"   stop-color="rgba(255,248,250,1)"/>
+                  <stop offset="100%" stop-color="rgba(248,235,242,1)"/>
+                </linearGradient>
+              </defs>
+              <polygon points="0,0 500,0 250,190" fill="url(#flapGrad)"/>
+              <line x1="0"   y1="0" x2="250" y2="190" stroke="rgba(200,150,170,0.45)" stroke-width="1"/>
+              <line x1="500" y1="0" x2="250" y2="190" stroke="rgba(200,150,170,0.45)" stroke-width="1"/>
+              <line x1="0"   y1="0.5" x2="500" y2="0.5" stroke="rgba(200,150,170,0.3)" stroke-width="1"/>
+            </svg>
+          </div>
+
+          <!-- Heart seal -->
+          <div id="ll-seal" class="ll-seal">
+            <svg viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="hg" cx="40%" cy="35%">
+                  <stop offset="0%"   stop-color="#ff8fab"/>
+                  <stop offset="100%" stop-color="#c9374f"/>
+                </radialGradient>
+              </defs>
+              <path d="M50 82 C30 64, 5 50, 5 28 A22 22 0 0 1 50 18 A22 22 0 0 1 95 28 C95 50 70 64 50 82Z" fill="url(#hg)"/>
+            </svg>
+          </div>
+
+          <!-- Letter peek -->
+          <div id="ll-peek" class="ll-peek">
+            <div class="ll-peek-glass"></div>
+            <div class="ll-peek-lines"><div></div><div></div><div></div></div>
+          </div>
+
+          <!-- Input -->
+          <div id="ll-input-group" class="ll-input-group">
+            <input id="ll-input" type="text" inputmode="numeric" autocomplete="off"
+              placeholder="DD-MM-YYYY" maxlength="10" class="ll-input" />
+            <div id="ll-error-msg" class="ll-error-msg ll-hidden">That&apos;s not our special date 💌</div>
+          </div>
+
+        </div>
+      </div>
+
+      <button id="ll-open-btn" class="ll-btn">Open Letter</button>
+    </div>
+
+    <!-- LETTER CARD -->
+    <div id="ll-card" class="ll-card ll-hidden">
+      <div class="ll-card-glass"></div>
+      <div class="ll-card-inner">
+        <div class="ll-card-header">To my love,</div>
+        <div id="ll-message" class="ll-message"></div>
+        <div class="ll-signature">Forever yours ❤️</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="/src/love-letter.js"></script>
+</body>
+</html>
